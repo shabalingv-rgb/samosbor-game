@@ -1,8 +1,12 @@
 [gd_project]
 
 config_version=5
-name="Samosbor: Obratnaya Storona Oboev"
+
+[application]
+
+config/name="Samosbor: Obratnaya Storona Oboev"
 run/main_scene="res://scenes/main/game_scene.tscn"
+config/features=PackedStringArray("4.6", "Forward Plus")
 
 [display]
 window/size/viewport_width=1280
