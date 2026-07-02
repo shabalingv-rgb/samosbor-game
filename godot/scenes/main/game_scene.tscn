@@ -1,10 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5p4p3tgk1h77xrn7cgg"]
+[gd_scene load_steps=3 format=3 uid="uid://c5p4p3tgk1h77xrn7cgg"]
 
-[ext_resource type="Script" path="res://scripts/managers/game_manager.gd" id="1_h7edn"]
+[ext_resource type="Script" path="res://scripts/systems/resource_system.gd" id="1_rsys"]
+[ext_resource type="Script" path="res://scripts/systems/phase_manager.gd" id="2_phase"]
 
 [node name="GameScene" type="Node2D"]
-script = ExtResource("1_h7edn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-enabled = true
-zoom = 1.0
+
+[node name="ResourceSystem" type="Node" parent="."]
+script = ExtResource("1_rsys")
+
+[node name="PhaseManager" type="Node" parent="."]
+script = ExtResource("2_phase")

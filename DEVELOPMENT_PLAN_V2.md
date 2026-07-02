@@ -36,30 +36,31 @@
 
 **AI: Haiku** (быстрая подготовка)
 
-- [ ] Загрузить Godot 4.1+ (скопировать из ~/Downloads/firebird-protocol-main0.1)
-- [ ] Инициировать новый проект `/godot/` в корне самосбора
-- [ ] Настроить project.godot:
-  - Отключить 3D (save memory)
-  - Canvas stretch mode: fit
-  - Physics: 2D only
-- [ ] Структура папок (scenes/, scripts/, assets/)
-- [ ] Первая сцена: `scenes/main/game_scene.tscn` (Node2D root)
+- ✅ Загрузить Godot 4.1+ (установлен **Godot Mono 4.7**, поддерживает GDScript)
+- ✅ Инициировать новый проект `/godot/` в корне самосбора
+- ✅ Настроить project.godot:
+  - ✅ Canvas stretch mode: `canvas_items` / expand
+  - ✅ `run/main_scene` → game_scene.tscn
+  - ⚠️ 3D не отключён полностью (в конфиге остались `[physics] 3d/...` и rendering-строки Windows) — некритично для 2D, чистка отложена
+- ✅ Структура папок (scenes/, scripts/managers, scripts/systems, assets/)
+- ✅ Первая сцена: `scenes/main/game_scene.tscn` (Node2D root + Camera2D + системы)
+- ✅ **[correctness]** Устранён конфликт двух `project.godot`: удалён stray root-проект (untracked debris), canonical — `/godot/`
 
 ### 1.2 Git Setup
 
 **AI: Haiku**
 
-- [ ] Добавить .gitignore (Godot 4 standard)
-- [ ] Создать branches: `main`, `dev`, `feature/base-systems`
-- [ ] Коммит: "Godot project initialization"
+- ✅ Добавить .gitignore (root + **`godot/.gitignore`** Godot 4/Mono standard)
+- ✅ Ветка `main` + `origin` (GitHub: shabalingv-rgb/samosbor-game). Trunk-based; `dev`/`feature/*` заводим по мере надобности
+- ✅ Коммит: "Godot project initialization" (+ последующие)
 
 ### 1.3 Documentation Setup
 
 **AI: Haiku**
 
-- [ ] Обновить README.md с базовой информацией
-- [ ] Создать SETUP.md (как запустить проект, требования)
-- [ ] GitHub Actions: простой CI для проверки синтаксиса
+- ✅ Обновить README.md с базовой информацией
+- ✅ Создать SETUP.md (как запустить проект, требования)
+- ✅ GitHub Actions: CI для проверки синтаксиса (`.github/workflows/gdscript-lint.yml`, gdtoolkit/gdlint)
 
 **Time estimate:** 3-4 часа (с учетом Godot)
 
@@ -99,12 +100,13 @@ signal detection_changed(risk: float)
 - Таймеры для каждой фазы
 
 **Tasks:**
-- [ ] Opus: Архитектурное обсуждение системы ресурсов
-- [ ] Sonnet: Реализация ResourceSystem.gd
-- [ ] Sonnet: Реализация PhaseManager.gd
-- [ ] Opus: Code review (критичность высокая)
+- ✅ Opus: Архитектурное обсуждение системы ресурсов → `ARCHITECTURE_RESOURCES.md` (роли GameManager/ResourceSystem/PhaseManager)
+- ✅ Реализация `ResourceSystem.gd` (пассивная генерация, дискретный ужас, биомасса с тел, атомарная трата) — *написано Opus как критичный код*
+- ✅ Реализация `PhaseManager.gd` (переходы фаз, пороги 80%/95%, сигналы)
+- ✅ Opus: Code review + **runtime-проверка headless** (все ветки экономики и принудительная Фаза 2 подтверждены)
+- ✅ **[correctness]** `GameManager` переведён из скрипта-корня сцены в **autoload** (иначе singleton не существовал)
 
-**Time:** 4-6 часов
+**Time:** 4-6 часов — **DONE**
 
 ### 2.2 Basic Visualization (Side-View Floor)
 
@@ -510,4 +512,7 @@ func generate_floor(floor_number: int, difficulty: float) -> Dictionary:
 ---
 
 **Документ обновлён:** 2 июля 2026  
-**Статус:** Готово к началу спринта 0
+**Статус:** ✅ Sprint 0 завершён · ⏳ Sprint 1 в работе (2.1 Resource & Phase — **готово**; 2.2 Визуализация и 2.3 UI — следующие)
+
+### Легенда прогресса
+- ✅ выполнено · ⏳ в работе · ⬜ не начато · ⚠️ выполнено с оговоркой · **[correctness]** исправление/заполнение пробела

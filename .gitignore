@@ -1,49 +1,11 @@
-# Godot project files
-*.tscn.bak
-*.scn.bak
-*.gdscript.bak
-*.gd.bak
+# Repo-level ignores (Godot project lives in /godot — see godot/.gitignore)
 .godot/
-*.translation
-*.import
-import/
+/android/
 
-# OS
+# macOS
 .DS_Store
-Thumbs.db
-*.swp
-*.swo
-*~
 
-# IDE
-.vscode/
-.idea/
-*.iml
-*.sublime-workspace
-
-# Python/pip
-venv/
-env/
-__pycache__/
-*.pyc
-
-# Build artifacts
-build/
-dist/
-*.o
-*.a
-*.so
-
-# Local configuration
-*.local
-.env
-.env.local
-
-# Backups
-*.bak
-*.backup
-*~
-
-# Temporary files
-*.tmp
-*.temp
+# Stray root Godot artifacts (canonical project is /godot)
+/project.godot
+/icon.svg
+/icon.svg.import
