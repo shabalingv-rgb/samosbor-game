@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfloor0samosbor01"]
+
+[ext_resource type="Script" path="res://scripts/environment/floor_section.gd" id="1_floor"]
+[ext_resource type="PackedScene" path="res://scenes/environment/ventilation.tscn" id="2_vent"]
+
+[node name="FloorSection" type="Node2D"]
+script = ExtResource("1_floor")
+
+[node name="Ventilation" parent="." instance=ExtResource("2_vent")]

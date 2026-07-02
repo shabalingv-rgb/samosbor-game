@@ -1,11 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5p4p3tgk1h77xrn7cgg"]
+[gd_scene load_steps=5 format=3 uid="uid://c5p4p3tgk1h77xrn7cgg"]
 
 [ext_resource type="Script" path="res://scripts/systems/resource_system.gd" id="1_rsys"]
 [ext_resource type="Script" path="res://scripts/systems/phase_manager.gd" id="2_phase"]
+[ext_resource type="PackedScene" path="res://scenes/environment/floor_section.tscn" id="3_floor"]
 
 [node name="GameScene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="FloorSection" parent="." instance=ExtResource("3_floor")]
+position = Vector2(-560, -180)
 
 [node name="ResourceSystem" type="Node" parent="."]
 script = ExtResource("1_rsys")
