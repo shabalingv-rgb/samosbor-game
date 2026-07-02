@@ -143,12 +143,13 @@ signal detection_changed(risk: float)
 **Minimal aesthetic:** Как почерк на полях обоев (шрифты, цвета)
 
 **Tasks:**
-- [ ] Haiku: Создать hud.tscn (простые Label/ProgressBar)
-- [ ] Sonnet: Подключить к game_manager (обновление при изменении ресурсов)
+- ✅ Создать `hud.tscn`/`hud.gd` (PanelContainer + бары Биомасса/Ужас/Обнаружение + фаза; палитра «старой бумаги», код-вёрстка) — *Opus*
+- ✅ Подключить к `GameManager` (реактивно на `resources_changed`/`phase_changed`/`detection_changed`, disconnect в `_exit_tree`)
+- ✅ **Визуально подтверждено скриншотом**: значения растут в реальном времени, кириллица рендерится
 
-**Time:** 2-3 часа
+**Time:** 2-3 часа — **DONE**
 
-**Total Sprint 1:** ~10-15 часов
+**Total Sprint 1:** ~10-15 часов — ✅ **СПРИНТ ЗАВЕРШЁН** (2.1 + 2.2 + 2.3)
 
 ---
 
@@ -513,7 +514,7 @@ func generate_floor(floor_number: int, difficulty: float) -> Dictionary:
 ---
 
 **Документ обновлён:** 2 июля 2026  
-**Статус:** ✅ Sprint 0 завершён · ⏳ Sprint 1 в работе (2.1 Resource & Phase ✅ · 2.2 Визуализация ✅ · 2.3 Basic UI — следующая)
+**Статус:** ✅ Sprint 0 завершён · ✅ Sprint 1 завершён (2.1 ✅ · 2.2 ✅ · 2.3 ✅) · ⏳ Sprint 2 (NPC & Enemy) — следующий
 
 ### Легенда прогресса
 - ✅ выполнено · ⏳ в работе · ⬜ не начато · ⚠️ выполнено с оговоркой · **[correctness]** исправление/заполнение пробела
