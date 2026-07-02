@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5p4p3tgk1h77xrn7cgg"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_h7edn"]
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_h7edn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = true
+zoom = 1.0

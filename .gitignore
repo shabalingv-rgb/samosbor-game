@@ -1,0 +1,49 @@
+# Godot project files
+*.tscn.bak
+*.scn.bak
+*.gdscript.bak
+*.gd.bak
+.godot/
+*.translation
+*.import
+import/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.sublime-workspace
+
+# Python/pip
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Build artifacts
+build/
+dist/
+*.o
+*.a
+*.so
+
+# Local configuration
+*.local
+.env
+.env.local
+
+# Backups
+*.bak
+*.backup
+*~
+
+# Temporary files
+*.tmp
+*.temp
