@@ -47,7 +47,7 @@ Uses: Creating cultists, paralyzing humans, forcing compliance, psychological sp
 3. **Development (Развитие):** Nest protection, metabolic efficiency, entity evolution
 
 ### Two Game Modes
-- **Story Mode:** Conquer 100 procedurally-generated floors, reach the core
+- **Story Mode:** Conquer 100 procedurally-generated floors. Floor 100 is the Liquidator HQ, built *around* the Core — not two separate endings but one: the Party fortified the one thing it could neither understand nor destroy, and called it a "headquarters" rather than name it truthfully. Five endings determined by the player's dominant skill tree, no dialogue choice screen — see `NARRATIVE_BIBLE.md` §3.
 - **Infinite Mode:** Survive as Партия (Party) prepares thermobaric weapon (50-80 min survival)
 
 ---
@@ -226,10 +226,13 @@ godot_project/
 ## Key Documents (Local)
 
 - **GAME_DESIGN_DOCUMENT.md** — Full GDD (mechanics, NPC types, lore integration, progression)
-- **DEVELOPMENT_PLAN.md** — Technical sprints, architecture, AI model recommendations
-- **RESEARCH_REPORT.md** — Samosbor universe lore compilation
-- **NARRATIVE_DESIGN_ANALYSIS.md** — Story integration methods
-- **ANALYSIS_EXISTING_GAMES.md** — Lessons from Samosbor-universe games
+- **NARRATIVE_BIBLE.md** — Canonical story bible: four narrative principles, the merged ending (§3), the seven narrative pillars (literacy-as-progression, dreams-as-dialogue, cult theology, Commandant tragic arcs, Leonov's "you" moment, reactive documents, found-artifact frame), sprint mapping. Source of truth for all story content; supersedes `archive/NARRATIVE_DESIGN_ANALYSIS.md`'s dialogue-tree/reputation approach, which was cut.
+- **DEVELOPMENT_PLAN_V2.md** — Technical sprints, architecture, AI model recommendations (V1 superseded, archived)
+- **fable.md / fable_nar.md** — Dated external audits (technical debt + narrative diagnosis) that informed the above; historical record, not living docs
+- **ARCHITECTURE_RESOURCES.md** — Roles of GameManager/ResourceSystem/PhaseManager
+- **archive/RESEARCH_REPORT.md** — Samosbor universe lore compilation
+- **archive/ANALYSIS_EXISTING_GAMES.md** — Lessons from Samosbor-universe games
+- **archive/IDEAS_RAZGONY.md** — Owner's original design notes ("разгоны"); fully integrated into GDD + NARRATIVE_BIBLE, kept for reference
 
 ## External Resources
 
@@ -247,15 +250,17 @@ godot_project/
 2. **Project settings:** Disable 3D (save memory), set canvas stretch mode to fit
 3. **First scene:** Create `scenes/main/game_scene.tscn` with a Node2D root
 4. **First script:** `scripts/game_manager.gd` to manage floor progression and game state
-5. **Reference:** Check `DEVELOPMENT_PLAN.md` for full directory structure and script templates
+5. **Reference:** Check `DEVELOPMENT_PLAN_V2.md` for full directory structure and script templates
 
 ---
 
 ## Next Steps
 
-Awaiting:
-1. Your text document with "разгоны" (ideas/sketches) — will integrate specific mechanics and lore from your version
-2. Clarification on any mechanics not covered here
+Status as of 03.07.2026: "разгоны" fully integrated (shifting shafts, logistical exhaustion, controls, ending resolution — see GDD + NARRATIVE_BIBLE.md). Narrative direction for all 7 pillars locked in NARRATIVE_BIBLE.md, sprint mapping in DEVELOPMENT_PLAN_V2.md.
+
+Still open:
+1. `fable.md` items 3-5 (detection risk growth formula, FloorState "ring" data model, resource carryover between floors) — flagged blocking before Sprint 2 NPC work, not yet designed.
+2. Logistical exhaustion exact formula (NARRATIVE_BIBLE references it, GDD has the rule but not the numbers) — needs an Opus pass, ideally validated with the headless balance simulator from `fable.md` p.24.
 3. Asset/art pipeline setup (who handles sprites, animations, sound?)
 
 This CLAUDE.md is a living document—update it as the design evolves.
